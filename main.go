@@ -22,7 +22,7 @@ func main() {
 	}
 
 	r := mux.NewRouter()
-	r.HandleFunc("/payload", payloadHandler).Methods("POST")
+	r.HandleFunc(conf.Server.PayloadEndpoint, payloadHandler).Methods("POST")
 	err = http.ListenAndServe(conf.Server.Host+":"+conf.Server.Port, r)
 	if err != nil {
 		log.Fatalln(err)

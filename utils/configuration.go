@@ -9,8 +9,9 @@ import (
 
 type Config struct {
 	Server struct {
-		Host string `yaml:"host"`
-		Port string `yaml:"port"`
+		Host            string `yaml:"host"`
+		Port            string `yaml:"port"`
+		PayloadEndpoint string `yaml:"payload_endpoint"`
 	} `yaml:"server"`
 	Repository struct {
 		Branch string `yaml:"branch"`
