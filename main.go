@@ -30,6 +30,9 @@ func main() {
 }
 
 func payloadHandler(w http.ResponseWriter, r *http.Request) {
+	// TODO: Support secrets
+	// TODO: Refactoring
+
 	body, _ := io.ReadAll(r.Body)
 	temp := strings.Split(string(body), ",")
 	temp = strings.Split(temp[0], ":")
@@ -38,6 +41,7 @@ func payloadHandler(w http.ResponseWriter, r *http.Request) {
 	if branch == conf.Repository.Branch {
 		log.Println("Running " + conf.Script.Path + "...")
 
+		// TODO: Get output from commands replacing Run() with Output()
 		err := exec.Command("chmod", "+x", conf.Script.Path).Run()
 		if err != nil {
 			log.Println(err)
