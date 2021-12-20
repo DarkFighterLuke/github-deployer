@@ -29,7 +29,7 @@ func main() {
 	}
 }
 
-func payloadHandler(w http.ResponseWriter, r *http.Request) {
+func payloadHandler(_ http.ResponseWriter, r *http.Request) {
 	// TODO: Support secrets
 	// TODO: Refactoring
 
